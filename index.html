@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mobile web app meta tags -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#d4af37">
+  <title>Lotós Café</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Carousel Background -->
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/logo.png" alt="Lotós Café Logo">
+      </div>
+      <div class="carousel-item">
+        <img src="images/1.jpg" alt="Café Interior">
+      </div>
+      <div class="carousel-item">
+        <img src="images/2.jpg" alt="Coffee">
+      </div>
+      <div class="carousel-item">
+        <img src="images/3.jpg" alt="Café Interior">
+      </div>
+    </div>
+  </div>
+
+  <!-- Framed Content -->
+  <div class="content">
+    <header>
+      <div class="language-switcher">
+        <img src="images/greek.png" alt="Greek" id="lang-el" class="flag-icon">
+        <img src="images/united-kingdom.png" alt="English" id="lang-en" class="flag-icon">
+        <img src="images/france.png" alt="French" id="lang-fr" class="flag-icon">
+        <img src="images/netherlands.png" alt="Dutch" id="lang-nl" class="flag-icon">
+        <img src="images/hebrew.png" alt="Hebrew" id="lang-he" class="flag-icon">
+        <img src="images/germany.png" alt="German" id="lang-de" class="flag-icon">
+      </div>
+      <h1 data-lang="el">Lotós Café</h1>
+      <h1 data-lang="en" style="display: none;">Lotós Café</h1>
+      <h1 data-lang="fr" style="display: none;">Lotós Café</h1>
+      <h1 data-lang="nl" style="display: none;">Lotós Café</h1>
+      <h1 data-lang="he" style="display: none;">לוטוס קפה</h1>
+      <h1 data-lang="de" style="display: none;">Lotós Café</h1>
+      <a href="menu.html" class="btn" data-lang="el">Δείτε το Μενού</a>
+      <a href="menu.html" class="btn" data-lang="en" style="display: none;">View Menu</a>
+      <a href="menu.html" class="btn" data-lang="fr" style="display: none;">Voir le Menu</a>
+      <a href="menu.html" class="btn" data-lang="nl" style="display: none;">Bekijk Menu</a>
+      <a href="menu.html" class="btn" data-lang="he" style="display: none;">הצג תפריט</a>
+      <a href="menu.html" class="btn" data-lang="de" style="display: none;">Menü Anzeigen</a>
+    </header>
+    <main>
+      <section class="welcome-section">
+        <!-- The headings here now receive the same gold styling as in the menu -->
+        <h2 data-lang="el">Καλώς ήρθατε στο Lotós Café</h2>
+        <h2 data-lang="en" style="display: none;">Welcome to Lotós Café</h2>
+        <h2 data-lang="fr" style="display: none;">Bienvenue au Lotós Café</h2>
+        <h2 data-lang="nl" style="display: none;">Welkom bij Lotós Café</h2>
+        <h2 data-lang="he" style="display: none;">ברוכים הבאים ללוטוס קפה</h2>
+        <h2 data-lang="de" style="display: none;">Willkommen im Lotós Café</h2>
+        <p data-lang="el">Απολαύστε τους καλύτερους καφέδες και γλυκά σε μια ζεστή και φιλική ατμόσφαιρα.</p>
+        <p data-lang="en" style="display: none;">Enjoy the best coffees and desserts in a warm and friendly atmosphere.</p>
+        <p data-lang="fr" style="display: none;">Profitez des meilleurs cafés et desserts dans une ambiance chaleureuse et conviviale.</p>
+        <p data-lang="nl" style="display: none;">Geniet van de beste koffies en desserts in een warme en vriendelijke sfeer.</p>
+        <p data-lang="he" style="display: none;">תהנה מהקפה והקינוחים הטובים ביותר באווירה חמה וידידותית.</p>
+        <p data-lang="de" style="display: none;">Genießen Sie die besten Kaffees und Desserts in einer warmen und freundlichen Atmosphäre.</p>
+      </section>
+
+      <section class="about-section">
+        <!-- About section headings get the same treatment -->
+        <h2 data-lang="el">Σχετικά με εμάς</h2>
+        <h2 data-lang="en" style="display: none;">About Us</h2>
+        <h2 data-lang="fr" style="display: none;">À propos de nous</h2>
+        <h2 data-lang="nl" style="display: none;">Over ons</h2>
+        <h2 data-lang="he" style="display: none;">עלינו</h2>
+        <h2 data-lang="de" style="display: none;">Über uns</h2>
+        <p data-lang="el">Επικοινωνήστε μαζί μας:</p>
+        <p data-lang="en" style="display: none;">Contact us:</p>
+        <p data-lang="fr" style="display: none;">Contactez-nous :</p>
+        <p data-lang="nl" style="display: none;">Neem contact met ons op:</p>
+        <p data-lang="he" style="display: none;">צור קשר:</p>
+        <p data-lang="de" style="display: none;">Kontaktieren Sie uns:</p>
+        <ul>
+          <li>📞 +30 123 456 789</li>
+          <li>📧 info@lotoscafe.com</li>
+          <li>
+            <a href="https://facebook.com/lotoscafe" target="_blank">Facebook</a> |
+            <a href="https://instagram.com/lotoscafe" target="_blank">Instagram</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p data-lang="el">© 2023 Lotós Café. Όλα τα δικαιώματα διατηρούνται.</p>
+      <p data-lang="en" style="display: none;">© 2023 Lotós Café. All rights reserved.</p>
+      <p data-lang="fr" style="display: none;">© 2023 Lotós Café. Tous droits réservés.</p>
+      <p data-lang="nl" style="display: none;">© 2023 Lotós Café. Alle rechten voorbehouden.</p>
+      <p data-lang="he" style="display: none;">© 2023 לוטוס קפה. כל הזכויות שמורות.</p>
+      <p data-lang="de" style="display: none;">© 2023 Lotós Café. Alle Rechte vorbehalten.</p>
+    </footer>
+  </div>
+
+  <script src="sripts.js"></script>
+</body>
+</html>
