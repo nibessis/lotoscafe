@@ -1,124 +1,98 @@
-/* Classy Menu & Numbered Menu Items */
-
-/* Reset and numbering for menu lists */
-.menu-category ul {
-  counter-reset: item-counter;
-  list-style-type: none;
-  padding-left: 0;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Menu Category Headers in a Gold, Classy Style */
-.menu-category h2 {
+body {
   font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  color: #d4af37; /* Gold accent */
-  text-align: center;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #d4af37;
-  padding-bottom: 5px;
-}
-
-/* Menu List Items with refined typography */
-.menu-category ul li {
-  counter-increment: item-counter;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
   color: #333;
-  margin-bottom: 12px;
-  line-height: 1.4;
 }
 
-/* Gold Numbering before each menu item */
-.menu-category ul li::before {
-  content: counter(item-counter) ". ";
-  font-weight: bold;
-  color: #d4af37;
-  margin-right: 10px;
-}
-
-/* Additional styling for index page headings to match the menu */
-.welcome-section h2,
-.about-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  color: #d4af37;
-  text-align: center;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #d4af37;
-  padding-bottom: 5px;
-}
-
-/* Content Frame to ensure readability over the carousel */
-.content {
-  position: relative;
-  z-index: 1; /* Sits above the carousel */
-  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
-  padding: 20px;
-  border-radius: 10px;
-  margin: 30px auto;
-  max-width: 1200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Carousel Styles for full-screen background */
-.carousel {
+.navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1; /* Behind the content */
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 1000;
 }
 
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s;
 }
 
-.carousel-item {
+.navbar a:hover {
+  color: #d4af37;
+}
+
+.language-switcher {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease;
+  right: 15px;
+  top: 12px;
 }
 
-.carousel-item.active {
-  opacity: 1;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Flag Icon Styles for language switcher */
 .flag-icon {
-  width: 40px;
-  height: auto;
+  width: 30px;
   cursor: pointer;
-  margin: 0 5px;
+  margin-left: 5px;
 }
 
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-  .content {
-    margin: 10px;
-    padding: 15px;
-  }
-  .menu-category h2,
-  .welcome-section h2,
-  .about-section h2 {
-    font-size: 1.8em;
-  }
-  .menu-category ul li {
-    font-size: 1em;
-  }
-  .flag-icon {
-    width: 35px;
-    margin: 0 3px;
-  }
+/* Global section styling */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel {
+  background-image: url('images/1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.accordion {
+  cursor: pointer;
+  color: #d4af37;
+  font-size: 1.6em;
+  border-bottom: 2px solid #d4af37;
+  padding: 10px;
+}
+
+.menu-category ul {
+  list-style: none;
+  padding-left: 0;
+  display: block;
+}
+
+/* Apply the same gradient background to all sections below the carousel */
+.content-section,
+footer {
+  background: linear-gradient(to bottom, #e2d8c3, #ffffff);
+}
+
+/* Reduce spacing for menu categories inside the menu section */
+#menu .menu-category {
+  padding: 20px 20px !important;
+  margin: 0 !important;
+  min-height: auto !important;
 }
