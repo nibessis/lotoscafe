@@ -10,17 +10,24 @@ body {
   color: #333;
 }
 
+/* NAVBAR */
 .navbar {
+  /* Keep it fixed at the top */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  /* Add safe area padding to the top */
-  padding: calc(15px + env(safe-area-inset-top)) 15px 15px;
+
+  /* Spacing & background */
+  padding: 15px;
   background-color: rgba(0, 0, 0, 0.85);
+
+  /* Flex layout */
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 15px;
+
+  /* Ensure it's always on top */
   z-index: 1000;
 }
 
@@ -35,20 +42,20 @@ body {
   color: #d4af37;
 }
 
+/* Push the language switcher to the right */
 .language-switcher {
-  position: absolute;
-  right: 15px;
-  /* Adjust top position to account for safe area */
-  top: calc(12px + env(safe-area-inset-top));
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .flag-icon {
   width: 30px;
   cursor: pointer;
-  margin-left: 5px;
 }
 
-/* Global section styling */
+/* SECTION STYLES */
 section {
   padding: 100px 20px;
   min-height: 100vh;
@@ -62,8 +69,9 @@ section.visible {
   transform: translateY(0);
 }
 
+/* CAROUSEL */
 .carousel {
-  background-image: url('images/1.jpg');
+  background-image: url('images/1.jpg'); /* Adjust if needed */
   background-size: cover;
   background-position: center;
   color: white;
@@ -73,6 +81,7 @@ section.visible {
   text-align: center;
 }
 
+/* ACCORDION (IF USED) */
 .accordion {
   cursor: pointer;
   color: #d4af37;
@@ -81,30 +90,32 @@ section.visible {
   padding: 10px;
 }
 
+/* MENU ITEMS ALWAYS VISIBLE */
 .menu-category ul {
   list-style: none;
   padding-left: 0;
   display: block;
 }
 
-/* Apply a unified gradient background for all sections below the carousel */
+/* APPLY A UNIFIED GRADIENT BACKGROUND FOR ALL SECTIONS BELOW THE CAROUSEL */
 .content-section,
 footer {
   background: linear-gradient(to bottom, #e2d8c3, #ffffff);
 }
 
+/* FOOTER */
 footer {
   padding: 20px;
 }
 
-/* Reduce spacing for menu categories inside the menu section */
+/* REDUCE SPACING FOR MENU CATEGORIES INSIDE THE #menu SECTION */
 #menu .menu-category {
   padding: 20px 20px !important;
   margin: 0 !important;
   min-height: auto !important;
 }
 
-/* Force the entire menu section to be visible */
+/* FORCE THE ENTIRE #menu SECTION TO BE VISIBLE (IF YOU'RE STILL USING THE FADE-IN OBSERVER) */
 #menu {
   opacity: 1 !important;
   transform: translateY(0) !important;
