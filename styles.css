@@ -16,26 +16,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  /* Fallback padding for browsers that don't support env() */
   padding: 15px;
+  padding-top: env(safe-area-inset-top, 15px); /* Apply safe-area-inset-top */
   background-color: rgba(0, 0, 0, 0.85);
-
-  /* Flex layout for links + language switcher in one row */
   display: flex;
   align-items: center;
   gap: 15px;
-
   z-index: 1000;
-}
-
-/* If the browser supports env(safe-area-inset-top), override the top padding */
-@supports (padding: env(safe-area-inset-top)) {
-  .navbar {
-    padding-top: calc(15px + env(safe-area-inset-top));
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-  }
 }
 
 .navbar a {
@@ -102,6 +89,18 @@ section.visible {
   list-style: none;
   padding-left: 0;
   display: block;
+}
+
+/* MENU TEXT SIZE AND READABILITY */
+.menu-category h2 {
+  font-size: 2em; /* Larger font size for category titles */
+  margin-bottom: 15px; /* Add some space below the title */
+}
+
+.menu-category ul li {
+  font-size: 1.4em; /* Larger font size for menu items */
+  line-height: 1.6; /* Increase line height for better readability */
+  margin-bottom: 10px; /* Add some space between menu items */
 }
 
 /* SAME GRADIENT BACKGROUND BELOW THE CAROUSEL */
