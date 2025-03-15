@@ -1,128 +1,57 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Playfair Display', serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fafafa;
-  color: #333;
-}
-
-/* NAVBAR */
+/* Improved Navbar */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px;
-  padding-top: env(safe-area-inset-top, 15px); /* Apply safe-area-inset-top */
-  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between; /* Ensures flags stay visible */
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1000;
+  flex-wrap: nowrap; /* Prevents items from stacking */
 }
 
+/* Navbar links */
 .navbar a {
   color: white;
   text-decoration: none;
   font-size: 1.2em;
-  transition: color 0.3s;
+  padding: 10px;
+  white-space: nowrap; /* Prevents menu text from wrapping */
 }
 
-.navbar a:hover {
-  color: #d4af37;
+/* Ensure the menu doesn't take full height */
+.navbar a:not(:last-child) {
+  flex: 1;
+  text-align: center;
 }
 
-/* Push the language switcher to the far right */
+/* Language switcher stays visible */
 .language-switcher {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 5px;
+  margin-left: auto; /* Pushes flags to the right */
 }
 
 .flag-icon {
   width: 30px;
+  height: auto;
   cursor: pointer;
 }
 
-/* SECTIONS */
-section {
-  padding: 100px 20px;
-  min-height: 100vh;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s, transform 1s;
-}
+/* Mobile Fix: Navbar Collapses */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    overflow-x: auto; /* Allows scrolling if too many options */
+    white-space: nowrap;
+    padding: 10px;
+  }
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* CAROUSEL */
-.carousel {
-  background-image: url('images/1.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* OPTIONAL ACCORDION */
-.accordion {
-  cursor: pointer;
-  color: #d4af37;
-  font-size: 1.8em;
-  border-bottom: 2px solid #d4af37;
-  padding: 10px;
-}
-
-/* MENU ALWAYS VISIBLE */
-.menu-category ul {
-  list-style: none;
-  padding-left: 0;
-  display: block;
-}
-
-/* MENU TEXT SIZE AND READABILITY */
-.menu-category h2 {
-  font-size: 2em; /* Larger font size for category titles */
-  margin-bottom: 15px; /* Add some space below the title */
-}
-
-.menu-category ul li {
-  font-size: 1.4em; /* Larger font size for menu items */
-  line-height: 1.6; /* Increase line height for better readability */
-  margin-bottom: 10px; /* Add some space between menu items */
-}
-
-/* SAME GRADIENT BACKGROUND BELOW THE CAROUSEL */
-.content-section,
-footer {
-  background: linear-gradient(to bottom, #e2d8c3, #ffffff);
-}
-
-/* FOOTER */
-footer {
-  padding: 20px;
-}
-
-/* REDUCE SPACING FOR MENU CATEGORIES */
-#menu .menu-category {
-  padding: 20px 20px !important;
-  margin: 0 !important;
-  min-height: auto !important;
-}
-
-/* FORCE THE ENTIRE #menu SECTION VISIBLE IF USING FADE-IN */
-#menu {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+  .language-switcher {
+    flex-shrink: 0; /* Prevents flags from disappearing */
+  }
 }
