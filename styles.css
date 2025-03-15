@@ -13,9 +13,11 @@ body {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  /* Add safe area padding to the top */
+  padding: calc(15px + env(safe-area-inset-top)) 15px 15px;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 15px;
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -36,7 +38,8 @@ body {
 .language-switcher {
   position: absolute;
   right: 15px;
-  top: 12px;
+  /* Adjust top position to account for safe area */
+  top: calc(12px + env(safe-area-inset-top));
 }
 
 .flag-icon {
@@ -84,10 +87,14 @@ section.visible {
   display: block;
 }
 
-/* Apply the same gradient background to all sections below the carousel */
+/* Apply a unified gradient background for all sections below the carousel */
 .content-section,
 footer {
   background: linear-gradient(to bottom, #e2d8c3, #ffffff);
+}
+
+footer {
+  padding: 20px;
 }
 
 /* Reduce spacing for menu categories inside the menu section */
@@ -95,4 +102,10 @@ footer {
   padding: 20px 20px !important;
   margin: 0 !important;
   min-height: auto !important;
+}
+
+/* Force the entire menu section to be visible */
+#menu {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
