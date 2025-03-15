@@ -16,14 +16,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-
-  /* Safe-area inset for devices with a notch/status bar. 
-     We add env(safe-area-inset-top) to the top padding. */
-  padding-top: calc(15px + env(safe-area-inset-top));
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-
+  /* Fallback padding for browsers that don't support env() */
+  padding: 15px;
   background-color: rgba(0, 0, 0, 0.85);
 
   /* Flex layout for links + language switcher in one row */
@@ -32,6 +26,16 @@ body {
   gap: 15px;
 
   z-index: 1000;
+}
+
+/* If the browser supports env(safe-area-inset-top), override the top padding */
+@supports (padding: env(safe-area-inset-top)) {
+  .navbar {
+    padding-top: calc(15px + env(safe-area-inset-top));
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+  }
 }
 
 .navbar a {
