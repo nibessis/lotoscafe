@@ -1,14 +1,25 @@
+/* Define CSS variables for a refined color palette and typography */
+:root {
+  --primary-color: #b8a99e;      /* Light refined color for headings/text */
+  --secondary-color: #5b4636;    /* Deep, classic tone for body text */
+  --bg-color: #f8f1e4;           /* Soft, elegant background */
+  --overlay-color: rgba(0, 0, 0, 0.5);
+  --nav-bg-color: rgba(0, 0, 0, 0.85);
+  --accent-color: #f0c040;       /* Accent for hovers and details */
+}
+
+/* Smooth scrolling remains */
 html {
   scroll-behavior: smooth;
 }
 
-/* Navbar Container */
+/* Navbar Container with refined transition effects */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: var(--nav-bg-color);
   padding: 10px 20px;
   position: fixed;
   top: 0;
@@ -16,34 +27,33 @@ html {
   z-index: 1000;
 }
 
-/* Navbar Links with Classy Styling */
+/* Navbar Links with subtle movement on hover */
 .nav-links a {
   color: #fff;
   text-decoration: none;
   font-family: 'Playfair Display', serif;
   font-size: 1.1em;
   padding: 5px 10px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-links a:hover {
-  color: #f0c040;
+  color: var(--accent-color);
+  transform: translateY(-2px);
 }
 
-/* Language Switcher */
+/* Language Switcher and Flag Icon Sizing */
 .language-switcher {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
 }
-
-/* Flag Icon Sizing */
 .flag-icon {
   width: 30px;
   height: auto;
 }
 
-/* Responsive Navbar */
+/* Responsive adjustments for the Navbar */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: row;
@@ -60,51 +70,62 @@ html {
   }
 }
 
-/* Carousel Section - Full Viewport Height with Intro on Top */
+/* Carousel Section with full viewport height and refined typography */
 .carousel {
   height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;  /* Stack children vertically */
-  align-items: center;       /* Center horizontally */
-  justify-content: flex-start;  /* Align items to the top */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
-  padding-top: 40px;  /* Adjust padding as needed */
+  padding-top: 40px;
 }
 
-/* Style for the intro container inside the carousel with overlay */
+/* Intro container with overlay and animated text */
 .carousel .intro {
-  margin-top: 20px; /* slight spacing from the top */
+  margin-top: 20px;
   position: relative;
   z-index: 10;
-  text-transform: uppercase; /* Bold, prominent text */
-  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent dark overlay */
+  text-transform: uppercase;
+  background-color: var(--overlay-color);
   padding: 20px;
   border-radius: 10px;
 }
-
-/* Big, bold title for the intro using EB Garamond */
 .carousel .intro h1 {
   font-family: 'EB Garamond', serif;
-  font-size: 4em; /* adjust size as needed */
+  font-size: 4em;
   font-weight: bold;
-  color: #b8a99e; /* lighter, refined color */
+  color: var(--primary-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin: 0.5em 0;
+  /* Fade-in-up animation */
+  animation: fadeInUp 1s ease-out forwards;
 }
-
-/* Supporting intro paragraph */
 .carousel .intro p {
   font-family: 'EB Garamond', serif;
   font-size: 1.5em;
-  color: #b8a99e;
+  color: var(--primary-color);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   margin: 0.5em 0;
+  /* Fade-in-up animation with slight delay */
+  animation: fadeInUp 1s ease-out 0.3s forwards;
 }
 
+/* Define keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* Content Sections (default styling) */
+/* Content Sections: start hidden and animate into view when scrolled */
 .content-section {
   padding: 100px 20px;
   min-height: 100vh;
@@ -113,21 +134,27 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Classy background for content sections */
 .classy-bg {
-  background: linear-gradient(135deg, #f8f1e4, #e6dacb);
-  color: #5b4636;
+  background: linear-gradient(135deg, var(--bg-color), #e6dacb);
+  color: var(--secondary-color);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Add subtle text-shadow for headings in classy sections */
 .classy-bg h2,
 .classy-bg h3 {
   text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
 }
 
-/* Menu Categories - One Below the Other */
+/* Menu Categories styling remains similar, using refined typography */
 .menu-category {
   width: 100%;
   max-width: 800px;
@@ -139,13 +166,9 @@ html {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
-
-/* Change from unordered to ordered list styling */
 .menu-category ol {
-  padding-left: 20px; /* provide indentation for numbers */
+  padding-left: 20px;
 }
-
-/* Style each list item */
 .menu-category li {
   padding: 5px 0;
   border-bottom: 1px solid rgba(255,255,255,0.3);
