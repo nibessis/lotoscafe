@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Navbar Container */
 .navbar {
   display: flex;
