@@ -1,5 +1,5 @@
 // --- bump this on every deploy ---
-const CACHE_VERSION = 'v8';
+const CACHE_VERSION = 'v9';
 const STATIC_CACHE = `lotos-cafe-static-${CACHE_VERSION}`;
 
 // Precache only the core shell. Big images are optional.
@@ -84,4 +84,5 @@ async function staleWhileRevalidate(req) {
     .catch(() => cached);
   return cached || fetchPromise;
 }
+
 
