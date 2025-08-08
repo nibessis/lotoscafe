@@ -142,6 +142,12 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+/* Ensure deep-linked sections (e.g. #menu from QR) are visible immediately */
+.content-section:target {
+  opacity: 1;
+  transform: none;
+}
+
 
 /* Classy background for content sections */
 .classy-bg {
@@ -173,3 +179,4 @@ html {
   padding: 5px 0;
   border-bottom: 1px solid rgba(255,255,255,0.3);
 }
+
