@@ -1,5 +1,5 @@
 // --- bump this on every deploy ---
-const CACHE_VERSION = 'v6';
+const CACHE_VERSION = 'v7';
 const STATIC_CACHE = `lotos-cafe-static-${CACHE_VERSION}`;
 
 // Precache only the core shell. Big images are optional.
@@ -9,6 +9,11 @@ const PRECACHE = [
   '/styles.css',
   '/scripts.js',
 ];
+
+// Allow page to request immediate activation
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
+});
 
 // Install: precache and take over asap
 self.addEventListener('install', (event) => {
@@ -22,9 +27,8 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys
-        .filter((k) => k !== STATIC_CACHE)
-        .map((k) => caches.delete(k))
+      Promise.all(
+        keys.filter((k) => k !== STATIC_CACHE).map((k) => caches.delete(k))
       )
     )
   );
@@ -45,7 +49,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 2) JSON/data: network-first so prices update
+  // 2) JSON/data: network-first so prices/data update
   if (req.destination === '' && url.pathname.endsWith('.json')) {
     event.respondWith(networkFirst(req));
     return;
@@ -72,13 +76,11 @@ async function networkFirst(req) {
 
 async function staleWhileRevalidate(req) {
   const cached = await caches.match(req);
-  const fetchPromise = fetch(req).then((res) => {
-    caches.open(STATIC_CACHE).then((c) => c.put(req, res.clone()));
-    return res;
-  }).catch(() => cached);
+  const fetchPromise = fetch(req)
+    .then((res) => {
+      caches.open(STATIC_CACHE).then((c) => c.put(req, res.clone()));
+      return res;
+    })
+    .catch(() => cached);
   return cached || fetchPromise;
 }
-
-
-
-
