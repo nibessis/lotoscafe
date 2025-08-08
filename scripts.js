@@ -1,4 +1,4 @@
-// ✅ Carousel functionality for the home section only
+// ✅ Home carousel
 const carouselImages = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg'];
 let currentIndex = 0;
 
@@ -37,9 +37,14 @@ document.querySelectorAll('.language-switcher img').forEach(flag => {
   flag.addEventListener('click', () => switchLanguage(flag.id));
 });
 
-// Load saved language or default to Greek
-const savedLang = localStorage.getItem('selectedLang') || 'el';
-switchLanguage(savedLang);
+// ✅ Initial language: use saved one; otherwise auto-detect once
+(function initLanguage() {
+  const supported = ['el','en','fr','nl','he','de'];
+  const saved = localStorage.getItem('selectedLang');
+  const auto = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+  const lang = saved || (supported.includes(auto) ? auto : 'en');
+  switchLanguage(lang);
+})();
 
 // ✅ Smooth animation for content sections
 const observer = new IntersectionObserver(entries => {
@@ -52,10 +57,29 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.content-section').forEach(section => observer.observe(section));
 
-// ✅ Register service worker for caching assets
+// ✅ Ensure deep-linked section (e.g., #menu from QR) is revealed immediately
+function revealSectionFromHash() {
+  const { hash } = location;
+  if (!hash) return;
+  const el = document.querySelector(hash);
+  if (el && el.classList && el.classList.contains('content-section')) {
+    el.classList.add('visible'); // forces it to fade in even if observer is late
+  }
+}
+window.addEventListener('hashchange', revealSectionFromHash);
+document.addEventListener('DOMContentLoaded', revealSectionFromHash);
+
+// ✅ Register service worker (mobile-friendly updates)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
+  navigator.serviceWorker.register('/service-worker.js?v=20250808', { updateViaCache: 'none' })
     .then(registration => {
+      // Ask for an update on load
+      registration.update();
+
+      // If a new worker takes control, reload once to get fresh HTML/assets
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        window.location.reload();
+      });
       console.log('Service Worker registered with scope:', registration.scope);
     })
     .catch(error => {
