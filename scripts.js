@@ -14,7 +14,7 @@ document.querySelectorAll('.carousel').forEach(section => {
   section.style.backgroundImage = `url(${carouselImages[currentIndex]})`;
 });
 
-setInterval(changeCarousel, 5000); // Change image every 5 seconds
+setInterval(changeCarousel, 20000); // Change image every 20 seconds
 
 // ✅ Language switching logic
 function switchLanguage(lang) {
@@ -86,3 +86,4 @@ if ('serviceWorker' in navigator) {
       console.error('Service Worker registration failed:', error);
     });
 }
+
