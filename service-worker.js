@@ -1,5 +1,5 @@
 // --- bump this on every deploy ---
-const CACHE_VERSION = 'v22';
+const CACHE_VERSION = 'v23';
 const STATIC_CACHE = `lotos-cafe-static-${CACHE_VERSION}`;
 
 // Precache only the core shell. Big images are optional.
