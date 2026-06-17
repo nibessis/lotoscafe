@@ -41,11 +41,8 @@
     </div>
   </section>
 
-  <section id="menu" class="content-section classy-bg">
-    <h2 data-lang-el="Μενού" data-lang-en="Menu" data-lang-fr="Menu" data-lang-nl="Menu" data-lang-he="תפריט" data-lang-de="Menü">Μενού</h2>
-  </section>
-
-  <!-- Καφέδες -->
+  <!-- Καφέδες — #menu anchor εδώ, ακριβώς πάνω από την πρώτη κατηγορία -->
+  <div id="menu" style="height:0;overflow:hidden;"></div>
   <section class="menu-category">
     <h2 data-lang="el">Καφέδες</h2>
     <h2 data-lang="en" style="display: none;">Coffees</h2>
@@ -376,7 +373,7 @@
     </ol>
   </section>
 
-  <!-- Αναψυκτικά & Χυμοί -->
+  <!-- ✅ FIX 2 & 3: Αναψυκτικά — φυσικός χυμός πρώτος, τιμές €3.2 παντού -->
   <section class="menu-category">
     <h2 data-lang="el">Αναψυκτικά & Χυμοί</h2>
     <h2 data-lang="en" style="display: none;">Refreshments & Juices</h2>
@@ -385,18 +382,7 @@
     <h2 data-lang="he" style="display: none;">משקאות קלים ומיצים</h2>
     <h2 data-lang="de" style="display: none;">Erfrischungen & Säfte</h2>
     <ol>
-      <li data-lang-el="Coca-Cola Zero 250 ml" data-lang-en="Coca-Cola Zero 250 ml" data-lang-fr="Coca-Cola Zéro 250 ml" data-lang-nl="Coca-Cola Zero 250 ml" data-lang-he="קוקה-קולה זירו 250 מ״ל" data-lang-de="Coca-Cola Zero 250 ml"></li>
-      <li data-lang-el="Coca-Cola 250 ml" data-lang-en="Coca-Cola 250 ml" data-lang-fr="Coca-Cola 250 ml" data-lang-nl="Coca-Cola 250 ml" data-lang-he="קוקה-קולה 250 מ״ל" data-lang-de="Coca-Cola 250 ml"></li>
-      <li data-lang-el="Coca-Cola Zero 250 ml χωρίς καφεΐνη" data-lang-en="Coca-Cola Zero 250 ml (caffeine-free)" data-lang-fr="Coca-Cola Zéro 250 ml (sans caféine)" data-lang-nl="Coca-Cola Zero 250 ml (cafeïnevrij)" data-lang-he="קוקה-קולה זירו 250 מ״ל (ללא קפאין)" data-lang-de="Coca-Cola Zero 250 ml (koffeinfrei)"></li>
-      <li data-lang-el="Fanta πορτοκάλι 250 ml" data-lang-en="Fanta Orange 250 ml" data-lang-fr="Fanta Orange 250 ml" data-lang-nl="Fanta Sinaasappel 250 ml" data-lang-he="פנטה תפוז 250 מ״ל" data-lang-de="Fanta Orange 250 ml"></li>
-      <li data-lang-el="Fanta μπλε 250 ml" data-lang-en="Fanta Blue 250 ml" data-lang-fr="Fanta Bleu 250 ml" data-lang-nl="Fanta Blauw 250 ml" data-lang-he="פנטה כחול 250 מ״ל" data-lang-de="Fanta Blau 250 ml"></li>
-      <li data-lang-el="Fanta λεμόνι 250 ml" data-lang-en="Fanta Lemon 250 ml" data-lang-fr="Fanta Citron 250 ml" data-lang-nl="Fanta Citroen 250 ml" data-lang-he="פנטה לימון 250 מ״ל" data-lang-de="Fanta Zitrone 250 ml"></li>
-      <li data-lang-el="Sprite 250 ml" data-lang-en="Sprite 250 ml" data-lang-fr="Sprite 250 ml" data-lang-nl="Sprite 250 ml" data-lang-he="ספרייט 250 מ״ל" data-lang-de="Sprite 250 ml"></li>
-      <li data-lang-el="Schweppes soda 250 ml" data-lang-en="Schweppes Soda 250 ml" data-lang-fr="Schweppes Soda 250 ml" data-lang-nl="Schweppes Soda 250 ml" data-lang-he="שוופס סודה 250 מ״ל" data-lang-de="Schweppes Soda 250 ml"></li>
-      <li data-lang-el="Schweppes pink grapefruit 250 ml" data-lang-en="Schweppes Pink Grapefruit 250 ml" data-lang-fr="Schweppes Pamplemousse Rose 250 ml" data-lang-nl="Schweppes Roze Grapefruit 250 ml" data-lang-he="שוופס אשכולית ורודה 250 מ״ל" data-lang-de="Schweppes Pink Grapefruit 250 ml"></li>
-      <li data-lang-el="Σουρωτή" data-lang-en="Souroti (sparkling water)" data-lang-fr="Souroti (eau gazeuse)" data-lang-nl="Souroti (bruisend water)" data-lang-he="סורוטי (מים מוגזים)" data-lang-de="Souroti (Mineralwasser, mit Kohlensäure)"></li>
-      <li data-lang-el="Βυσσινάδα" data-lang-en="Sour cherry drink" data-lang-fr="Boisson à la griotte" data-lang-nl="Zure kersendrank" data-lang-he="משקה דובדבן חמוץ" data-lang-de="Sauerkirschgetränk"></li>
-
+      <!-- ✅ Φυσικός χυμός πορτοκάλι ΠΡΩΤΟΣ -->
       <li data-lang="el">Πορτοκάλι Φυσικός: €3.6</li>
       <li data-lang="en" style="display: none;">Fresh Orange Juice: €3.6</li>
       <li data-lang="fr" style="display: none;">Jus d'Orange Frais: €3.6</li>
@@ -404,12 +390,97 @@
       <li data-lang="he" style="display: none;">מיץ תפוזים טרי: €3.6</li>
       <li data-lang="de" style="display: none;">Frischer Orangensaft: €3.6</li>
 
+      <!-- ✅ Αναψυκτικά με τιμή €3.2 -->
+      <li data-lang="el">Coca-Cola Zero 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Coca-Cola Zero 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Coca-Cola Zéro 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Coca-Cola Zero 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">קוקה-קולה זירו 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Coca-Cola Zero 250ml: €3.2</li>
+
+      <li data-lang="el">Coca-Cola 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Coca-Cola 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Coca-Cola 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Coca-Cola 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">קוקה-קולה 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Coca-Cola 250ml: €3.2</li>
+
+      <li data-lang="el">Coca-Cola Zero 250ml χωρίς καφεΐνη: €3.2</li>
+      <li data-lang="en" style="display: none;">Coca-Cola Zero 250ml (caffeine-free): €3.2</li>
+      <li data-lang="fr" style="display: none;">Coca-Cola Zéro 250ml (sans caféine): €3.2</li>
+      <li data-lang="nl" style="display: none;">Coca-Cola Zero 250ml (cafeïnevrij): €3.2</li>
+      <li data-lang="he" style="display: none;">קוקה-קולה זירו 250מ"ל (ללא קפאין): €3.2</li>
+      <li data-lang="de" style="display: none;">Coca-Cola Zero 250ml (koffeinfrei): €3.2</li>
+
+      <li data-lang="el">Fanta πορτοκάλι 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Fanta Orange 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Fanta Orange 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Fanta Sinaasappel 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">פנטה תפוז 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Fanta Orange 250ml: €3.2</li>
+
+      <li data-lang="el">Fanta μπλε 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Fanta Blue 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Fanta Bleu 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Fanta Blauw 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">פנטה כחול 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Fanta Blau 250ml: €3.2</li>
+
+      <li data-lang="el">Fanta λεμόνι 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Fanta Lemon 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Fanta Citron 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Fanta Citroen 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">פנטה לימון 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Fanta Zitrone 250ml: €3.2</li>
+
+      <li data-lang="el">Sprite 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Sprite 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Sprite 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Sprite 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">ספרייט 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Sprite 250ml: €3.2</li>
+
+      <li data-lang="el">Schweppes Soda 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Schweppes Soda 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Schweppes Soda 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Schweppes Soda 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">שוופס סודה 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Schweppes Soda 250ml: €3.2</li>
+
+      <li data-lang="el">Schweppes Pink Grapefruit 250ml: €3.2</li>
+      <li data-lang="en" style="display: none;">Schweppes Pink Grapefruit 250ml: €3.2</li>
+      <li data-lang="fr" style="display: none;">Schweppes Pamplemousse Rose 250ml: €3.2</li>
+      <li data-lang="nl" style="display: none;">Schweppes Roze Grapefruit 250ml: €3.2</li>
+      <li data-lang="he" style="display: none;">שוופס אשכולית ורודה 250מ"ל: €3.2</li>
+      <li data-lang="de" style="display: none;">Schweppes Pink Grapefruit 250ml: €3.2</li>
+
+      <li data-lang="el">Σουρωτή: €3.2</li>
+      <li data-lang="en" style="display: none;">Souroti (sparkling water): €3.2</li>
+      <li data-lang="fr" style="display: none;">Souroti (eau gazeuse): €3.2</li>
+      <li data-lang="nl" style="display: none;">Souroti (bruisend water): €3.2</li>
+      <li data-lang="he" style="display: none;">סורוטי (מים מוגזים): €3.2</li>
+      <li data-lang="de" style="display: none;">Souroti (Mineralwasser): €3.2</li>
+
+      <li data-lang="el">Βυσσινάδα: €3.2</li>
+      <li data-lang="en" style="display: none;">Sour Cherry Drink: €3.2</li>
+      <li data-lang="fr" style="display: none;">Boisson à la Griotte: €3.2</li>
+      <li data-lang="nl" style="display: none;">Zure Kersendrank: €3.2</li>
+      <li data-lang="he" style="display: none;">משקה דובדבן חמוץ: €3.2</li>
+      <li data-lang="de" style="display: none;">Sauerkirschgetränk: €3.2</li>
+
       <li data-lang="el">Ice Tea (Ροδάκινο, Πράσινο, Λεμόνι): €3.2</li>
       <li data-lang="en" style="display: none;">Ice Tea (Peach, Green, Lemon): €3.2</li>
       <li data-lang="fr" style="display: none;">Thé Glacé (Pêche, Vert, Citron): €3.2</li>
       <li data-lang="nl" style="display: none;">IJsthee (Perzik, Groen, Citroen): €3.2</li>
       <li data-lang="he" style="display: none;">תה קר (אפרסק, ירוק, לימון): €3.2</li>
       <li data-lang="de" style="display: none;">Eistee (Pfirsich, Grün, Zitrone): €3.2</li>
+
+      <li data-lang="el">Χυμός Αμίτα: €3.2</li>
+      <li data-lang="en" style="display: none;">Amita Juice: €3.2</li>
+      <li data-lang="fr" style="display: none;">Jus Amita: €3.2</li>
+      <li data-lang="nl" style="display: none;">Amita Sap: €3.2</li>
+      <li data-lang="he" style="display: none;">מיץ אמיטה: €3.2</li>
+      <li data-lang="de" style="display: none;">Amita-Saft: €3.2</li>
 
       <li data-lang="el">Mastiqua: €4.3</li>
       <li data-lang="en" style="display: none;">Mastiqua: €4.3</li>
@@ -432,18 +503,11 @@
       <li data-lang="he" style="display: none;">ביפרש: €4.3</li>
       <li data-lang="de" style="display: none;">Bfresh: €4.3</li>
 
-      <li data-lang="el">Χυμός Αμίτα: €3.2</li>
-      <li data-lang="en" style="display: none;">Amita Juice: €3.2</li>
-      <li data-lang="fr" style="display: none;">Jus Amita: €3.2</li>
-      <li data-lang="nl" style="display: none;">Amita Sap: €3.2</li>
-      <li data-lang="he" style="display: none;">מיץ אמיטה: €3.2</li>
-      <li data-lang="de" style="display: none;">Amita-Saft: €3.2</li>
-
       <li data-lang="el">Νερό 500ml: €0.7</li>
       <li data-lang="en" style="display: none;">Water 500ml: €0.7</li>
       <li data-lang="fr" style="display: none;">Eau 500ml: €0.7</li>
       <li data-lang="nl" style="display: none;">Water 500ml: €0.7</li>
-      <li data-lang="he" style="display: none;">מים 500 מ"ל: €0.7</li>
+      <li data-lang="he" style="display: none;">מים 500מ"ל: €0.7</li>
       <li data-lang="de" style="display: none;">Wasser 500ml: €0.7</li>
     </ol>
   </section>
@@ -655,28 +719,28 @@
       <li data-lang="en" style="display:none;">Ouzo 50ml: €3.2</li>
       <li data-lang="fr" style="display:none;">Ouzo 50ml: €3.2</li>
       <li data-lang="nl" style="display:none;">Ouzo 50ml: €3.2</li>
-      <li data-lang="he" style="display:none;">אוזו 50 מ"ל: €3.2</li>
+      <li data-lang="he" style="display:none;">אוזו 50מ"ל: €3.2</li>
       <li data-lang="de" style="display:none;">Ouzo 50ml: €3.2</li>
 
       <li data-lang="el">Τσίπουρο 50ml: €3.2</li>
       <li data-lang="en" style="display:none;">Tsipouro 50ml: €3.2</li>
       <li data-lang="fr" style="display:none;">Tsipouro 50ml: €3.2</li>
       <li data-lang="nl" style="display:none;">Tsipouro 50ml: €3.2</li>
-      <li data-lang="he" style="display:none;">ציפורו 50 מ"ל: €3.2</li>
+      <li data-lang="he" style="display:none;">ציפורו 50מ"ל: €3.2</li>
       <li data-lang="de" style="display:none;">Tsipouro 50ml: €3.2</li>
 
       <li data-lang="el">Ούζο 200ml: €10.8</li>
       <li data-lang="en" style="display:none;">Ouzo 200ml: €10.8</li>
       <li data-lang="fr" style="display:none;">Ouzo 200ml: €10.8</li>
       <li data-lang="nl" style="display:none;">Ouzo 200ml: €10.8</li>
-      <li data-lang="he" style="display:none;">אוזו 200 מ"ל: €10.8</li>
+      <li data-lang="he" style="display:none;">אוזו 200מ"ל: €10.8</li>
       <li data-lang="de" style="display:none;">Ouzo 200ml: €10.8</li>
 
       <li data-lang="el">Τσίπουρο 200ml: €10.8</li>
       <li data-lang="en" style="display:none;">Tsipouro 200ml: €10.8</li>
       <li data-lang="fr" style="display:none;">Tsipouro 200ml: €10.8</li>
       <li data-lang="nl" style="display:none;">Tsipouro 200ml: €10.8</li>
-      <li data-lang="he" style="display:none;">ציפורו 200 מ"ל: €10.8</li>
+      <li data-lang="he" style="display:none;">ציפורו 200מ"ל: €10.8</li>
       <li data-lang="de" style="display:none;">Tsipouro 200ml: €10.8</li>
 
       <li data-lang="el"><strong>Ποτό Απλό:</strong> €7.0</li>
@@ -763,19 +827,23 @@
   </section>
 
   <section id="about" class="content-section classy-bg">
-    <h2 data-lang-el="Πληροφορίες" data-lang-en="About">Πληροφορίες</h2>
+    <h2 data-lang-el="Πληροφορίες" data-lang-en="About" data-lang-fr="À propos" data-lang-nl="Over" data-lang-he="אודות" data-lang-de="Über uns">Πληροφορίες</h2>
     <p data-lang-el="Το καφέ Λωτός βρίσκεται στην κεντρική πλατεία της Καλαμάτας από το 1986 και ήταν το πρώτο που έφερε espresso στην πόλη."
-       data-lang-en="Lotós Café has been located in Kalamata's central square since 1986 and was the first to introduce espresso to the city.">
+       data-lang-en="Lotós Café has been located in Kalamata's central square since 1986 and was the first to introduce espresso to the city."
+       data-lang-fr="Le Café Lotós est situé sur la place centrale de Kalamata depuis 1986 et a été le premier à introduire l'espresso dans la ville."
+       data-lang-nl="Lotós Café is sinds 1986 gevestigd op het centrale plein van Kalamata en was de eerste die espresso introduceerde in de stad."
+       data-lang-he="קפה לוטוס ממוקם בכיכר המרכזית של קלמאטה מאז 1986 והיה הראשון להציג אספרסו בעיר."
+       data-lang-de="Das Lotós Café befindet sich seit 1986 auf dem zentralen Platz von Kalamata und war das erste, das Espresso in der Stadt einführte.">
        Το καφέ Λωτός βρίσκεται στην κεντρική πλατεία της Καλαμάτας από το 1986 και ήταν το πρώτο που έφερε espresso στην πόλη.
     </p>
   </section>
 
   <section id="gallery" class="content-section classy-bg">
-    <h2 data-lang-el="Φωτογραφίες" data-lang-en="Gallery">Φωτογραφίες</h2>
+    <h2 data-lang-el="Φωτογραφίες" data-lang-en="Gallery" data-lang-fr="Galerie" data-lang-nl="Galerij" data-lang-he="גלריה" data-lang-de="Galerie">Φωτογραφίες</h2>
   </section>
 
   <section id="contact" class="content-section classy-bg">
-    <h2 data-lang-el="Επικοινωνία" data-lang-en="Contact">Επικοινωνία</h2>
+    <h2 data-lang-el="Επικοινωνία" data-lang-en="Contact" data-lang-fr="Contact" data-lang-nl="Contact" data-lang-he="צור קשר" data-lang-de="Kontakt">Επικοινωνία</h2>
     <p>
       <a href="https://www.google.com/maps?q=Καφέ+Λωτός,+Πλατεία+23ης+Μαρτίου,+Καλαμάτα" target="_blank">
         📍 <span data-lang="el">Δείτε στον Χάρτη</span>
